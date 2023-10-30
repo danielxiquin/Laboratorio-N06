@@ -3,8 +3,37 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <chrono>
 
 using namespace std;
+
+class StopWatch {
+public:
+	void start() {
+		start_time = std::chrono::high_resolution_clock::now();
+		is_running = true;
+	}
+
+	void stop() {
+		end_time = std::chrono::high_resolution_clock::now();
+		is_running = false;
+	}
+
+	double elapsed_seconds() {
+		std::chrono::duration<double> elapsed;
+		if (is_running) {
+			elapsed = std::chrono::high_resolution_clock::now() - start_time;
+		}
+		else {
+			elapsed = end_time - start_time;
+		}
+		return elapsed.count();
+	}
+
+private:
+	std::chrono::time_point<std::chrono::high_resolution_clock> start_time, end_time;
+	bool is_running = false;
+};
 
 struct ord {
 	int nationalnumber;
@@ -334,7 +363,7 @@ int main() {
 		pokemones.push_back(list);
 	}
 
-
+	StopWatch stopwatch;
 	
 	Ordenar resultado;
 	
@@ -368,20 +397,28 @@ int main() {
 			cout << "Ordenado por nationalnumber" << endl;
 			cout << endl;
 			cout << "selection sort" << endl;
-
+			stopwatch.start();
 			resultado.selectionSort(pokemones, "nationalnumber");
+			stopwatch.stop();
 			resultado.PrintPokemonList(pokemones);
 
+			cout << "Tiempo de ejecucion fue: " << stopwatch.elapsed_seconds() << " segundos" << endl;
 			cout << endl;
 			cout << "Quick sort" << endl;
 
-
+			stopwatch.start();
 			resultado.QuickSort(pokemones, "nationalnumber", 0, pokemones.size() - 1);
+			stopwatch.stop();
 			resultado.PrintPokemonList(pokemones);
+			cout << "Tiempo de ejecucion fue: " << stopwatch.elapsed_seconds() << " segundos" << endl;
 			cout << endl;
 			cout << "Shellsort" << endl;
+
+			stopwatch.start();
 			resultado.shellsort(pokemones, "nationalnumber");
+			stopwatch.stop();
 			resultado.PrintPokemonList(pokemones);
+			cout << "Tiempo de ejecucion fue: " << stopwatch.elapsed_seconds() << " segundos" << endl;
 			cout << "presione cualquier letra para regresar al menu" << endl;
 
 			pausa();
@@ -394,21 +431,29 @@ int main() {
 			cout << "Ordenado por namepokemon" << endl;
 			cout << endl;
 			cout << "selection sort" << endl;
+			stopwatch.start();
 			resultado.selectionSort(pokemones, "namepokemon");
+			stopwatch.stop();
 			resultado.PrintPokemonList(pokemones);
 			
 
+			cout << "Tiempo de ejecucion fue: " << stopwatch.elapsed_seconds() << " segundos" << endl;
 			cout << endl;
 			cout << "Quick sort" << endl;
-
-
+			stopwatch.start();
 			resultado.QuickSort(pokemones, "namepokemon", 0, pokemones.size() - 1);
+			stopwatch.stop();
 			resultado.PrintPokemonList(pokemones);
 			
+			cout << "Tiempo de ejecucion fue: " << stopwatch.elapsed_seconds() << " segundos" << endl;
 			cout << endl;
+
 			cout << "Shellsort" << endl;
+			stopwatch.start();
 			resultado.shellsort(pokemones, "namepokemon");
+			stopwatch.stop();
 			resultado.PrintPokemonList(pokemones);
+			cout << "Tiempo de ejecucion fue: " << stopwatch.elapsed_seconds() << " segundos" << endl;
 			cout << "presione cualquier letra para regresar al menu" << endl;
 			pausa();
 
@@ -419,19 +464,28 @@ int main() {
 			cout << "Ordenado por generacion" << endl;
 			cout << endl;
 			cout << "selection sort" << endl;
+			stopwatch.start();
 			resultado.selectionSort(pokemones, "generacion");
+			stopwatch.stop();
 			resultado.PrintPokemonList(pokemones);
-
+			cout << "Tiempo de ejecucion fue: " << stopwatch.elapsed_seconds() << " segundos" << endl;
 			cout << endl;
+
 			cout << "Quick sort" << endl;
-
+			stopwatch.start();
 			resultado.QuickSort(pokemones, "generacion", 0, pokemones.size() - 1);
+			stopwatch.stop();
 			resultado.PrintPokemonList(pokemones);
-
+			cout << "Tiempo de ejecucion fue: " << stopwatch.elapsed_seconds() << " segundos" << endl;
 			cout << endl;
+
+
 			cout << "Shellsort" << endl;
+			stopwatch.start();
 			resultado.shellsort(pokemones, "generacion");
+			stopwatch.stop();
 			resultado.PrintPokemonList(pokemones);
+			cout << "Tiempo de ejecucion fue: " << stopwatch.elapsed_seconds() << " segundos" << endl;
 			cout << "presione cualquier letra para regresar al menu" << endl;
 
 			pausa();
