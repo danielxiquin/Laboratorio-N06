@@ -1,0 +1,7 @@
+﻿  Source.cpp
+C:\Users\DANIEL\source\repos\Lab6OscarXiquin1118423\Lab6OscarXiquin1118423\Source.cpp(18,9): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\DANIEL\source\repos\Lab6OscarXiquin1118423\Lab6OscarXiquin1118423\Source.cpp(83,9): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\DANIEL\source\repos\Lab6OscarXiquin1118423\Lab6OscarXiquin1118423\Source.cpp(379,73): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\DANIEL\source\repos\Lab6OscarXiquin1118423\Lab6OscarXiquin1118423\Source.cpp(405,70): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\DANIEL\source\repos\Lab6OscarXiquin1118423\Lab6OscarXiquin1118423\Source.cpp(428,69): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Lab6OscarXiquin1118423.vcxproj -> C:\Users\DANIEL\source\repos\Lab6OscarXiquin1118423\x64\Debug\Lab6OscarXiquin1118423.exe
